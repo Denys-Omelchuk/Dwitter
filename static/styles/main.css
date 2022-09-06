@@ -1,0 +1,161 @@
+body{
+    overflow: hidden;
+    margin: 0px;
+    background-color: black;
+    font-family: Roboto, Arial;
+    color: rgb(227, 232, 235);
+}
+
+svg {
+    color : rgb(227, 232, 235);
+}
+
+.webpage{
+    height: 100vh;
+    width: 100vw;
+}
+.webpage-container{
+    display: inline-flex;
+}
+
+/*  */
+
+.middle-side{
+    background-color: black;
+    width: 566px;
+    height: 100vh;
+    border-right: 1px solid rgb(47, 51, 54);
+    overflow: hidden;
+}
+.page-name{
+    color: rgb(227, 232, 235);
+    font-size: 20px;
+    font-family: Roboto, Arial;
+    font-weight: 600;
+    margin: 16px 16px;
+}
+
+.textarea{
+    width: 534px;
+    height: 55px;
+    font-family: Roboto, Arial;
+    font-size: 19px;
+    color: white;
+    background-color: rgb(33, 35, 36);
+    border: none;
+    margin-top: 11px;
+    border-radius: 10px;
+    margin: 0px 16px;
+}
+
+.input-field-menu{
+    padding: 7px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgb(47, 51, 54);
+}
+
+.input-options{
+    flex: 1;
+    padding-left: 16px;
+}
+.mid-tweet-button-container{
+    width: 76px;
+    padding-right: 18px;
+}
+
+.mid-tweet-button{
+    height: 36px;
+    width: 76px;
+    background-color: black;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+    font-family: Roboto, Arial;
+    color: rgb(227, 232, 235);
+    font-weight: 700;
+    border-radius: 60px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.17s;
+    background-color: rgb(29, 155, 240);
+}
+
+.mid-tweet-button:hover{
+    background-color: rgb(25, 137, 211);
+  }
+
+.post-container{
+    display: flex;
+    padding: 12px 16px;
+    border-bottom:  1px solid rgb(47, 51, 54);
+}
+
+.tweet-input-avatar{
+    width: 48px;
+    height: 100%;
+    padding-right: 12px;
+    display: inline-block;
+}
+.tweet-input-avatar-button{
+    width: 52px;
+    height: 52px;
+    border: none;
+    padding: 0px;
+    background-color: black;
+}
+.tweet-input-avatar-button-icon{
+    width: 48px;
+    height: 48px;
+    padding-top: 2px;
+    border-radius: 60px;
+}
+
+.post-info-container{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.a{
+    width: 100%;
+    height: 20px;
+    padding: 2px 1px;
+}
+.b{
+    width: 100%;
+    padding: 2px 1px;
+}
+.c{
+    background-color: rgb(58, 54, 99);
+    width: 100%;
+    height: 20px;
+    display: flex;
+}
+
+.post-info-name,
+.post-info-text{
+    font-family: Roboto, Arial;
+    font-size: 15px;
+    color: rgb(227, 232, 235);
+}
+
+.post-info-username-and-date{
+    color: rgb(113, 118, 123);
+    font-family: Roboto, Arial;
+    font-size: 15px;
+    padding: 0px 1px;
+}
+.post-info-name{
+    font-weight: 500;
+    padding-right: 3px;
+}
+
+.post-buttons-container{
+    flex: 25%;
+    border-color: beige;
+}
+
+
