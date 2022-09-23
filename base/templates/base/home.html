@@ -1,6 +1,4 @@
-{% extends 'main.html' %}
-
-{% block content %}
+{% extends 'main.html' %} {% block content %}
 
 <div class="middle-side">
   <p class="page-name">Home</p>
@@ -13,30 +11,26 @@
       <button class="mid-tweet-button">Tweet</button>
     </div>
   </div>
-
+  {% for post in posts %}
   <div class="post-container">
     <div class="tweet-input-avatar">
       <button class="tweet-input-avatar-button">
         <img
           class="tweet-input-avatar-button-icon"
-          src="/avatars/photo_2022-05-25_03-25-30.jpg"
+          src="{{post.host.avatar.url}}"
           alt=""
         />
       </button>
     </div>
     <div class="post-info-container">
       <div class="a">
-        <span class="post-info-name">Denis Omelchuk</span>
-        <span class="post-info-username-and-date">@denom</span>
+        <span class="post-info-name">{{post.host.name}}</span>
+        <span class="post-info-username-and-date">@{{post.host.username}}</span>
         <span class="post-info-username-and-date">&#183;</span>
-        <span class="post-info-username-and-date">Oct 04</span>
+        <span class="post-info-username-and-date">{{post.created}}</span>
       </div>
       <div class="b">
-        <span class="post-info-text">
-          Folks, the United States just became the first country in the world to
-          offer safe and effective COVID-19 vaccines for kids as young as six
-          months old.
-        </span>
+        <span class="post-info-text">{{post.body}}</span>
       </div>
       <div class="c">
         <div class="post-buttons-container">fff</div>
@@ -46,6 +40,7 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 </div>
 <div class="right-side"></div>
 

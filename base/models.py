@@ -9,7 +9,7 @@ class User(AbstractUser):
     bio = models.CharField(null=True, max_length=250)
     email = models.EmailField(null=True, unique=True)
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
     pass
 
