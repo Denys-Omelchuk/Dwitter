@@ -92,7 +92,6 @@
 
 /* User Panel */
 .profile-button{
-    position: absolute;
     bottom: 15px;
     width: 250px;
     height: 64px;
@@ -151,4 +150,9 @@
     color: rgb(214, 217, 219);
     position: relative;
     top: 18px;
+  }
+
+  .user-panel{
+    position: fixed;
+    bottom: 12px;
   }
