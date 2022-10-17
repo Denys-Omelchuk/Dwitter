@@ -1,3 +1,7 @@
+from email.policy import default
+from pyexpat import model
+from random import choices
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -15,15 +19,33 @@ class User(AbstractUser):
 
 
 class Post(models.Model):
-    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='host')
     body = models.CharField(max_length=50, null=False)
     created = models.DateTimeField(auto_now_add=True)
+    liked = models.ManyToManyField(User, default=None, blank=True, related_name='liked')
 
     class Meta:
         ordering = ['-created']
 
     def __str__(self):
         return self.body
+
+    @property
+    def num_likes(self):
+        return self.liked.all().count()
+
+LIKE_CHOICES = (
+    ('Like', 'Like'),
+    ('Unlike', 'Unlike')
+)
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    value = models.CharField(choices=LIKE_CHOICES, default="Like", max_length=10)
+
+    def __str__(self):
+        return self.post
 
 
 class PostComment(models.Model):

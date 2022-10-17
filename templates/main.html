@@ -17,18 +17,16 @@
   </head>
   <body>
     <div class="webpage-container">
+      <!-- NAVBAR STARTS -->
+      {% include 'navbar.html' %}
+      <!-- NAVBAR ENDS -->
 
-  
-    <!-- NAVBAR STARTS -->
-   {% include 'navbar.html' %}
-    <!-- NAVBAR ENDS -->
-
-    <div class="webpage">
+      <div class="webpage">
       {% block content %}
 
       {% endblock content %}
-    </div>
 
+      </div>
     </div>
   </body>
 </html>

@@ -155,7 +155,13 @@ svg {
 
 .post-buttons-container{
     flex: 25%;
-    border-color: beige;
 }
-
+.like_button_like{
+    background-color: transparent;
+}
+.like_button_likes_count{
+    color: rgb(113, 118, 123);
+    font-family: Roboto, Arial;
+    font-size: 14px;
+}
 
