@@ -19,8 +19,8 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     class Meta:
-        verbose_name = "user"
-        verbose_name_plural = "users"
+        verbose_name = 'user'
+        verbose_name_plural = 'users'
 
     def __str__(self):
         return self.username
@@ -36,8 +36,9 @@ class Post(models.Model):
     body = models.CharField(max_length=50, null=False)
     created = models.DateTimeField(auto_now_add=True)
     liked = models.ManyToManyField(
-        User, default=None, blank=True, related_name='liked'
+        User, default=None, blank=True, related_name='liked',
     )
+    bookmarked = models.ManyToManyField(User, default=None, blank=True, related_name='bookmarked')
 
     class Meta:
         ordering = ['-created']
@@ -60,10 +61,22 @@ class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     value = models.CharField(choices=LIKE_CHOICES,
-                             default="Like", max_length=10)
+                             default='Like', max_length=6)
 
     def __str__(self):
         return self.post
+
+
+BOOKMARK_CHOICES = (
+    ('Bookmark', 'Bookmark'),
+    ('Un_bookmark', 'Un_bookmark')
+)
+
+
+class Bookmark(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    value = models.CharField(choices=BOOKMARK_CHOICES, default='Bookmark', max_length=11)
 
 
 class PostComment(models.Model):
